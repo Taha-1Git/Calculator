@@ -1,0 +1,9 @@
+{
+  "name": "simple-calculator",
+  "version": "1.0.0",
+  "description": "A small calculator in plain HTML, CSS and JavaScript",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

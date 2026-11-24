@@ -1,0 +1,84 @@
+:root {
+  --bg: #12141a;
+  --panel: #1c1f28;
+  --key: #2a2e3a;
+  --key-hover: #353a49;
+  --fn: #444a5c;
+  --op: #ff9f1c;
+  --op-hover: #ffb347;
+  --text: #f2f4f8;
+  --muted: #8a90a2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.calculator {
+  width: min(92vw, 340px);
+  padding: 18px;
+  background: var(--panel);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.screen {
+  padding: 12px 14px 8px;
+  text-align: right;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.expression {
+  min-height: 1.4em;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.display {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.15;
+  word-break: break-all;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.key {
+  height: 64px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--key);
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.12s, transform 0.06s;
+}
+
+.key:hover { background: var(--key-hover); }
+.key:active { transform: scale(0.95); }
+.key:focus-visible { outline: 2px solid var(--op); outline-offset: 2px; }
+
+.key.fn { background: var(--fn); }
+.key.fn:hover { background: #545b70; }
+
+.key.op,
+.key.eq { background: var(--op); color: #1a1100; font-weight: 600; }
+.key.op:hover,
+.key.eq:hover { background: var(--op-hover); }
